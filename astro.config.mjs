@@ -11,9 +11,11 @@ import config from "./src/config/config.json";
 
 import node from "@astrojs/node";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
+  site: config.site.base_url ? config.site.base_url : "http://attajak-ap.netlify.app",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: { service: sharp() },
@@ -42,7 +44,5 @@ export default defineConfig({
     extendDefaultPlugins: true,
   },
 
-  adapter: node({
-    mode: "standalone",
-  }),
+  adapter: netlify(),
 });

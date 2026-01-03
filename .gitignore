@@ -28,3 +28,6 @@ pnpm-workspace.yaml
 
 # ide
 .idea/
+
+# Local Netlify folder
+.netlify
